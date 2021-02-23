@@ -1,0 +1,5 @@
+{
+    "DATABASE":"Database_connection_string",
+    "PORT":"application_port",
+    "jwtPrivateKey":"application_jwtPrivateKey"
+}
