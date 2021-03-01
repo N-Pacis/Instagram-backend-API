@@ -20,6 +20,7 @@ router.post("/login",async (req,res)=>{
         if(!validPassword) return res.status(400).send("Invalid username or password!");
         //@ts-ignore
         const token  =jwt.sign({_id:userExists._id,Email:userExists.Email,FullName:userExists.FullName,Username:userExists.Username,Password:userExists.Password},config.get('jwtPrivateKey'))
+        res.setHeader('x-auth-token',token)
         res.header('x-auth-token',token).send(
             //@ts-ignore
              "Successfully logged In  as "+userExists.Username,)
